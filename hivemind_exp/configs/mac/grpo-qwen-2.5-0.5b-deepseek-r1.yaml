@@ -1,7 +1,7 @@
 # Model arguments
 model_revision: main
-torch_dtype: bfloat16
-bf16: true
+torch_dtype: float16
+bf16: false
 tf32: false
 
 # Dataset arguments
@@ -29,7 +29,7 @@ max_completion_length: 1024
 logging_strategy: steps
 logging_steps: 2
 report_to:
-- tensorboard
+- wandb
 save_strategy: "steps"
 save_steps: 25
 seed: 42
