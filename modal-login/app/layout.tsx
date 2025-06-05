@@ -15,14 +15,13 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  // Persist state across pages
-  const cookieHeaders = await headers();
+}) {
+  const headersData = await headers();
   const initialState = cookieToInitialState(
     config,
-    cookieHeaders.get("cookie") ?? undefined,
+    headersData.get("cookie") ?? undefined,
   );
 
   return (
